@@ -15,7 +15,7 @@ namespace LaptopvsPC
 
     public partial class MainFrm : Form
     {
-        int a = 2;
+
         public MainFrm()
         {
             InitializeComponent();
@@ -27,6 +27,11 @@ namespace LaptopvsPC
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
         {
 
         }

@@ -203,6 +203,7 @@
             this.MinimizeBox = false;
             this.Name = "MainFrm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Load += new System.EventHandler(this.MainFrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
