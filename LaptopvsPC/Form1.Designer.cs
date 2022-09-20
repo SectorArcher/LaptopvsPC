@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gomb1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -38,12 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
@@ -81,6 +78,10 @@
             this.radioButton41 = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // gomb1
@@ -95,6 +96,7 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -142,48 +144,6 @@
             this.label3.Name = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // radioButton7
-            // 
-            resources.ApplyResources(this.radioButton7, "radioButton7");
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.TabStop = true;
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            resources.ApplyResources(this.radioButton8, "radioButton8");
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.TabStop = true;
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            resources.ApplyResources(this.radioButton9, "radioButton9");
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.TabStop = true;
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            resources.ApplyResources(this.radioButton10, "radioButton10");
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.TabStop = true;
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            resources.ApplyResources(this.radioButton11, "radioButton11");
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.TabStop = true;
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            resources.ApplyResources(this.radioButton13, "radioButton13");
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.TabStop = true;
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
@@ -214,6 +174,7 @@
             this.radioButton14.Name = "radioButton14";
             this.radioButton14.TabStop = true;
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // radioButton15
             // 
@@ -429,10 +390,39 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
+            // chart1
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
+            resources.ApplyResources(this.chart1, "chart1");
+            this.chart1.Name = "chart1";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart1.Series.Add(series5);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.radioButton36);
@@ -470,12 +460,6 @@
             this.Controls.Add(this.radioButton17);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.radioButton13);
-            this.Controls.Add(this.radioButton11);
-            this.Controls.Add(this.radioButton10);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -489,6 +473,7 @@
             this.Name = "MainFrm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.MainFrm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,12 +490,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton13;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -548,6 +527,9 @@
         private System.Windows.Forms.RadioButton radioButton41;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
