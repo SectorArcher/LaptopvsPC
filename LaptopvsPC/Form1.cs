@@ -29,36 +29,42 @@ namespace LaptopvsPC
      
         private void inicializeDataTable()
         {
-            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("ID");
             dt.Columns.Add("Processzor");
             dt.Columns.Add("Memória");
             dt.Columns.Add("Videókártya");
             dt.Columns.Add("Kivitel");
             dt.Columns.Add("Javaslatok");
-            DataColumn[] keys = new DataColumn[1];
-            keys[0] = dt.Columns[0];
-            dt.PrimaryKey = keys;
         }
 
         private void dataProcessing()
         {
             string text;
-            using (StreamReader sr = new StreamReader(filePath))
+            try
             {
-                text = sr.ReadToEnd();
-            }
-            string[] lines = text.Split(new char[] { '*' });
-            for (int i = 0; i < lines.Length; ++i)
-            {
-                string[] splices = lines[i].Split(new char[] { ',' });
-                string[] row = new string[splices.Length];
-                for (int x = 0; x < splices.Length; ++x)
+                using (StreamReader sr = new StreamReader(filePath))
                 {
-                    row[x] = splices[x].Trim();
-                }
+                    text = sr.ReadToEnd();
+                    string[] lines = text.Split(new char[] { '*' });
+                    for (int i = 0; i < lines.Length; ++i)
+                    {
+                        string[] splices = lines[i].Split(new char[] { ',' });
+                        string[] row = new string[splices.Length];
+                        for (int x = 0; x < splices.Length; ++x)
+                        {
+                            row[x] = splices[x].Trim();
+                        }
 
-                dt.Rows.Add(row);
+                        dt.Rows.Add(row);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             dtGrdVw.AutoResizeColumns();
         }
 
