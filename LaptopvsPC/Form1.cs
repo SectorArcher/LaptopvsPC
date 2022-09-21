@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 
 
@@ -17,72 +12,61 @@ namespace LaptopvsPC
     public partial class MainFrm : Form
     {
         DataTable dt = new DataTable();
-        public string taroltAdat { get; set; }
+        string filePath = @"..\..\RawData\Adatok.txt";
 
         public MainFrm()
         {
-            InitializeComponent();
-            comboBox1.Items.Add(0);
-            dt.Columns.Add("Típus");
-            dt.Columns.Add("Leírás");
+            InitializeComponent();           
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
-
+            inicializeDataTable();
+            dtGrdVw.DataSource = dt;
+            dataProcessing();
+        }
+     
+        private void inicializeDataTable()
+        {
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Processzor");
+            dt.Columns.Add("Memória");
+            dt.Columns.Add("Videókártya");
+            dt.Columns.Add("Kivitel");
+            dt.Columns.Add("Javaslatok");
+            DataColumn[] keys = new DataColumn[1];
+            keys[0] = dt.Columns[0];
+            dt.PrimaryKey = keys;
         }
 
-        private void radioButton14_CheckedChanged(object sender, EventArgs e)
+        private void dataProcessing()
         {
-            string filePath;
-            OpenFileDialog ofd = new OpenFileDialog();
-            //ofd.ShowDialog();
-            //filePath = ofd.FileName;
-            if (ofd.ShowDialog() == DialogResult.OK)
+            string text;
+            using (StreamReader sr = new StreamReader(filePath))
             {
-                filePath = ofd.FileName;
-                using (StreamReader streamReader = new StreamReader(filePath))
-                {
-                    //comboBox1.Items.Add(streamReader.ReadToEnd());
-                    //string mostaniSor = (streamReader.ReadLine());
-                    taroltAdat = streamReader.ReadToEnd();
-                    //comboBox1.Items.Add(taroltAdat);
-
-                }
+                text = sr.ReadToEnd();
             }
-           
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            string filePath;
-            OpenFileDialog ofd = new OpenFileDialog();
-            //ofd.ShowDialog();
-            //filePath = ofd.FileName;
-            if (ofd.ShowDialog() == DialogResult.OK)
+            string[] lines = text.Split(new char[] { '*' });
+            for (int i = 0; i < lines.Length; ++i)
             {
-                filePath = ofd.FileName;
-                using (StreamReader streamReader = new StreamReader(filePath))
+                string[] splices = lines[i].Split(new char[] { ',' });
+                string[] row = new string[splices.Length];
+                for (int x = 0; x < splices.Length; ++x)
                 {
-                    //label10.Text = streamReader.ReadToEnd();
-                    taroltAdat = streamReader.ReadToEnd();
+                    row[x] = splices[x].Trim();
                 }
+
+                dt.Rows.Add(row);
             }
+            dtGrdVw.AutoResizeColumns();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bttnFinish_Click(object sender, EventArgs e)
         {
-            label10.Text = taroltAdat;
+
+            
+
         }
     }
 }
