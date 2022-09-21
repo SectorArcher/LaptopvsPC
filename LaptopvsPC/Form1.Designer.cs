@@ -53,6 +53,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.bttnFinish = new System.Windows.Forms.Button();
+            this.bttnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,10 +206,18 @@
             this.bttnFinish.UseVisualStyleBackColor = true;
             this.bttnFinish.Click += new System.EventHandler(this.bttnFinish_Click);
             // 
+            // bttnReset
+            // 
+            resources.ApplyResources(this.bttnReset, "bttnReset");
+            this.bttnReset.Name = "bttnReset";
+            this.bttnReset.UseVisualStyleBackColor = true;
+            this.bttnReset.Click += new System.EventHandler(this.bttnReset_Click);
+            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bttnReset);
             this.Controls.Add(this.bttnFinish);
             this.Controls.Add(this.dtGrdVw);
             this.Controls.Add(this.comboBox1);
@@ -269,6 +278,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dtGrdVw;
         private System.Windows.Forms.Button bttnFinish;
+        private System.Windows.Forms.Button bttnReset;
     }
 }
 

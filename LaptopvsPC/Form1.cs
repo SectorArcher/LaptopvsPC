@@ -78,24 +78,32 @@ namespace LaptopvsPC
 
             var buttons = this.Controls.OfType<RadioButton>()
                            .FirstOrDefault(n => n.Checked);
-            switch (buttons.Name)
+            if (buttons != null)
             {
-                case "rdBttn1" :
-                    rdBttn = 0;
-                    break;
-                case "rdBttn2":
-                    rdBttn = 1;
-                    break;
-                case "rdBttn3":
-                    rdBttn = 4;
-                    break;
-                case "rdBttn4":
-                    rdBttn = 3;
-                    break;
-                case "rdBttn5":
-                    rdBttn = 2;
-                    break;
+                switch (buttons.Name)
+                {
+                    case "rdBttn1":
+                        rdBttn = 0;
+                        break;
+                    case "rdBttn2":
+                        rdBttn = 1;
+                        break;
+                    case "rdBttn3":
+                        rdBttn = 4;
+                        break;
+                    case "rdBttn4":
+                        rdBttn = 3;
+                        break;
+                    case "rdBttn5":
+                        rdBttn = 2;
+                        break;
+                }
             }
+            else
+            {
+                MessageBox.Show("Kérlek válassz ki egy radiobutton-t, ne legyél buta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
             if (rdBttn != null)
             {
                 (dtGrdVw.DataSource as DataTable).DefaultView.RowFilter = string.Format("ID = '{0}'", rdBttn);
@@ -103,6 +111,24 @@ namespace LaptopvsPC
                 dtGrdVw.AutoResizeColumns();
             }
             
+        }
+
+        private void bttnReset_Click(object sender, EventArgs e)
+        {
+            dtGrdVw.Visible=false;
+            rdBttn = null;
+            var buttons = this.Controls.OfType<RadioButton>()
+                           .FirstOrDefault(n => n.Checked);
+            if (buttons != null)
+            {
+                buttons.Checked = false;
+
+            }
+            else
+            {
+                MessageBox.Show("Válassz ki valamit, mielőtt reset-elnél, ember...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
