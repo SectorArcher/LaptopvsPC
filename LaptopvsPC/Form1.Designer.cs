@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.gomb1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rdBttn1 = new System.Windows.Forms.RadioButton();
+            this.rdBttn2 = new System.Windows.Forms.RadioButton();
+            this.rdBttn4 = new System.Windows.Forms.RadioButton();
+            this.rdBttn5 = new System.Windows.Forms.RadioButton();
+            this.rdBttn3 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,40 +62,40 @@
             this.gomb1.Name = "gomb1";
             this.gomb1.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdBttn1
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rdBttn1, "rdBttn1");
+            this.rdBttn1.Name = "rdBttn1";
+            this.rdBttn1.TabStop = true;
+            this.rdBttn1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdBttn2
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rdBttn2, "rdBttn2");
+            this.rdBttn2.Name = "rdBttn2";
+            this.rdBttn2.TabStop = true;
+            this.rdBttn2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdBttn4
             // 
-            resources.ApplyResources(this.radioButton3, "radioButton3");
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rdBttn4, "rdBttn4");
+            this.rdBttn4.Name = "rdBttn4";
+            this.rdBttn4.TabStop = true;
+            this.rdBttn4.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdBttn5
             // 
-            resources.ApplyResources(this.radioButton4, "radioButton4");
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rdBttn5, "rdBttn5");
+            this.rdBttn5.Name = "rdBttn5";
+            this.rdBttn5.TabStop = true;
+            this.rdBttn5.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdBttn3
             // 
-            resources.ApplyResources(this.radioButton6, "radioButton6");
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rdBttn3, "rdBttn3");
+            this.rdBttn3.Name = "rdBttn3";
+            this.rdBttn3.TabStop = true;
+            this.rdBttn3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -227,11 +227,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdBttn3);
+            this.Controls.Add(this.rdBttn5);
+            this.Controls.Add(this.rdBttn4);
+            this.Controls.Add(this.rdBttn2);
+            this.Controls.Add(this.rdBttn1);
             this.Controls.Add(this.gomb1);
             this.MinimizeBox = false;
             this.Name = "MainFrm";
@@ -246,11 +246,11 @@
         #endregion
 
         private System.Windows.Forms.Button gomb1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rdBttn1;
+        private System.Windows.Forms.RadioButton rdBttn2;
+        private System.Windows.Forms.RadioButton rdBttn4;
+        private System.Windows.Forms.RadioButton rdBttn5;
+        private System.Windows.Forms.RadioButton rdBttn3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

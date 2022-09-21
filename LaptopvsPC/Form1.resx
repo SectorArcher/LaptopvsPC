@@ -147,172 +147,172 @@
   <data name="&gt;&gt;gomb1.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="radioButton1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rdBttn1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rdBttn1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rdBttn1.Location" type="System.Drawing.Point, System.Drawing">
     <value>84, 268</value>
   </data>
-  <data name="radioButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rdBttn1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rdBttn1.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 28</value>
   </data>
-  <data name="radioButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="rdBttn1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="radioButton1.Text" xml:space="preserve">
+  <data name="rdBttn1.Text" xml:space="preserve">
     <value>Irodai </value>
   </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
+  <data name="&gt;&gt;rdBttn1.Name" xml:space="preserve">
+    <value>rdBttn1</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn1.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn1.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rdBttn2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rdBttn2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rdBttn2.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 268</value>
   </data>
-  <data name="radioButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rdBttn2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rdBttn2.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 28</value>
   </data>
-  <data name="radioButton2.TabIndex" type="System.Int32, mscorlib">
+  <data name="rdBttn2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="radioButton2.Text" xml:space="preserve">
+  <data name="rdBttn2.Text" xml:space="preserve">
     <value>Fotó - Videó szerkesztés</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
+  <data name="&gt;&gt;rdBttn2.Name" xml:space="preserve">
+    <value>rdBttn2</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn2.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn2.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="radioButton3.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rdBttn4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rdBttn4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="radioButton3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rdBttn4.Location" type="System.Drawing.Point, System.Drawing">
     <value>84, 320</value>
   </data>
-  <data name="radioButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rdBttn4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rdBttn4.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 28</value>
   </data>
-  <data name="radioButton3.TabIndex" type="System.Int32, mscorlib">
+  <data name="rdBttn4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="radioButton3.Text" xml:space="preserve">
+  <data name="rdBttn4.Text" xml:space="preserve">
     <value>Iskolai</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
-    <value>radioButton3</value>
+  <data name="&gt;&gt;rdBttn4.Name" xml:space="preserve">
+    <value>rdBttn4</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn4.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn4.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="radioButton4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rdBttn5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rdBttn5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="radioButton4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rdBttn5.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 320</value>
   </data>
-  <data name="radioButton4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rdBttn5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rdBttn5.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 28</value>
   </data>
-  <data name="radioButton4.TabIndex" type="System.Int32, mscorlib">
+  <data name="rdBttn5.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="radioButton4.Text" xml:space="preserve">
+  <data name="rdBttn5.Text" xml:space="preserve">
     <value>Általános felhasználás</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
-    <value>radioButton4</value>
+  <data name="&gt;&gt;rdBttn5.Name" xml:space="preserve">
+    <value>rdBttn5</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Type" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn5.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="radioButton6.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rdBttn3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton6.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rdBttn3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="radioButton6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rdBttn3.Location" type="System.Drawing.Point, System.Drawing">
     <value>453, 268</value>
   </data>
-  <data name="radioButton6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rdBttn3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="radioButton6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rdBttn3.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 28</value>
   </data>
-  <data name="radioButton6.TabIndex" type="System.Int32, mscorlib">
+  <data name="rdBttn3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="radioButton6.Text" xml:space="preserve">
+  <data name="rdBttn3.Text" xml:space="preserve">
     <value>Videójáték</value>
   </data>
-  <data name="radioButton6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="rdBttn3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;radioButton6.Name" xml:space="preserve">
-    <value>radioButton6</value>
+  <data name="&gt;&gt;rdBttn3.Name" xml:space="preserve">
+    <value>rdBttn3</value>
   </data>
-  <data name="&gt;&gt;radioButton6.Type" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn3.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;radioButton6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rdBttn3.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">

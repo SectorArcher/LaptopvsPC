@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -13,10 +15,11 @@ namespace LaptopvsPC
     {
         DataTable dt = new DataTable();
         string filePath = @"..\..\RawData\Adatok.txt";
+        int? rdBttn = null;
 
         public MainFrm()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
 
@@ -25,8 +28,10 @@ namespace LaptopvsPC
             inicializeDataTable();
             dtGrdVw.DataSource = dt;
             dataProcessing();
+            dtGrdVw.Columns[0].Visible = false;
+            dtGrdVw.Visible = false;    
         }
-     
+
         private void inicializeDataTable()
         {
             dt.Columns.Add("ID");
@@ -62,17 +67,42 @@ namespace LaptopvsPC
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
             dtGrdVw.AutoResizeColumns();
         }
 
         private void bttnFinish_Click(object sender, EventArgs e)
         {
 
+            var buttons = this.Controls.OfType<RadioButton>()
+                           .FirstOrDefault(n => n.Checked);
+            switch (buttons.Name)
+            {
+                case "rdBttn1" :
+                    rdBttn = 0;
+                    break;
+                case "rdBttn2":
+                    rdBttn = 1;
+                    break;
+                case "rdBttn3":
+                    rdBttn = 4;
+                    break;
+                case "rdBttn4":
+                    rdBttn = 3;
+                    break;
+                case "rdBttn5":
+                    rdBttn = 2;
+                    break;
+            }
+            if (rdBttn != null)
+            {
+                (dtGrdVw.DataSource as DataTable).DefaultView.RowFilter = string.Format("ID = '{0}'", rdBttn);
+                dtGrdVw.Visible = true;
+                dtGrdVw.AutoResizeColumns();
+            }
             
-
         }
     }
 }
