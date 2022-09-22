@@ -50,10 +50,14 @@
             this.radioButton32 = new System.Windows.Forms.RadioButton();
             this.radioButton33 = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBx1 = new System.Windows.Forms.ComboBox();
             this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.bttnFinish = new System.Windows.Forms.Button();
             this.bttnReset = new System.Windows.Forms.Button();
+            this.cmbBx2 = new System.Windows.Forms.ComboBox();
+            this.cmbBx3 = new System.Windows.Forms.ComboBox();
+            this.cmbBx4 = new System.Windows.Forms.ComboBox();
+            this.cmbBx5 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +190,11 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
-            // comboBox1
+            // cmbBx1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
+            this.cmbBx1.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx1, "cmbBx1");
+            this.cmbBx1.Name = "cmbBx1";
             // 
             // dtGrdVw
             // 
@@ -213,14 +217,42 @@
             this.bttnReset.UseVisualStyleBackColor = true;
             this.bttnReset.Click += new System.EventHandler(this.bttnReset_Click);
             // 
+            // cmbBx2
+            // 
+            this.cmbBx2.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx2, "cmbBx2");
+            this.cmbBx2.Name = "cmbBx2";
+            // 
+            // cmbBx3
+            // 
+            this.cmbBx3.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx3, "cmbBx3");
+            this.cmbBx3.Name = "cmbBx3";
+            // 
+            // cmbBx4
+            // 
+            this.cmbBx4.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx4, "cmbBx4");
+            this.cmbBx4.Name = "cmbBx4";
+            // 
+            // cmbBx5
+            // 
+            this.cmbBx5.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx5, "cmbBx5");
+            this.cmbBx5.Name = "cmbBx5";
+            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbBx5);
+            this.Controls.Add(this.cmbBx4);
+            this.Controls.Add(this.cmbBx3);
+            this.Controls.Add(this.cmbBx2);
             this.Controls.Add(this.bttnReset);
             this.Controls.Add(this.bttnFinish);
             this.Controls.Add(this.dtGrdVw);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbBx1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.radioButton30);
             this.Controls.Add(this.radioButton31);
@@ -275,10 +307,14 @@
         private System.Windows.Forms.RadioButton radioButton32;
         private System.Windows.Forms.RadioButton radioButton33;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBx1;
         private System.Windows.Forms.DataGridView dtGrdVw;
         private System.Windows.Forms.Button bttnFinish;
         private System.Windows.Forms.Button bttnReset;
+        private System.Windows.Forms.ComboBox cmbBx2;
+        private System.Windows.Forms.ComboBox cmbBx3;
+        private System.Windows.Forms.ComboBox cmbBx4;
+        private System.Windows.Forms.ComboBox cmbBx5;
     }
 }
 

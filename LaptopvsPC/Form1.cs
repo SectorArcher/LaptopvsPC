@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -17,6 +16,15 @@ namespace LaptopvsPC
         string filePath = @"..\..\RawData\Adatok.txt";
         int? rdBttn = null;
 
+        public enum Rating
+        {
+            Egyátalán_nem_fontos,
+            Nem_fontos,
+            Közepesen_fontos,
+            Eléggé_fontos,
+            Nagyon_fontos
+        }
+
         public MainFrm()
         {
             InitializeComponent();
@@ -29,7 +37,23 @@ namespace LaptopvsPC
             dtGrdVw.DataSource = dt;
             dataProcessing();
             dtGrdVw.Columns[0].Visible = false;
-            dtGrdVw.Visible = false;    
+            dtGrdVw.Visible = false;
+            inicializeComboBoxes();
+        }
+
+        private void inicializeComboBoxes()
+        {
+            string[] enumElements = Enum.GetNames(typeof(Rating));
+            foreach (ComboBox cb in this.Controls.OfType<ComboBox>())
+            {
+                //cb.DataSource = Enum.GetNames(typeof(Rating));
+                foreach (var item in enumElements)
+                {
+                    cb.Items.Add(item.Replace("_", " "));
+                }
+                cb.SelectedIndex = -1;
+            }
+
         }
 
         private void inicializeDataTable()
