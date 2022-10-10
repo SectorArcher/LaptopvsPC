@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 
@@ -34,17 +36,19 @@ namespace LaptopvsPC
         private void MainFrm_Load(object sender, EventArgs e)
         {
             inicializeDataTable();
-            dtGrdVw.DataSource = dt;
+            //dtGrdVw.DataSource = dt;
             dataProcessing();
-            dtGrdVw.Columns[0].Visible = false;
-            dtGrdVw.Visible = false;
+            //dtGrdVw.Columns[0].Visible = false;
+            //dtGrdVw.Visible = false;
             inicializeComboBoxes();
+            label2.Font = new Font(label2.Font, FontStyle.Bold);
+            label10.Font = new Font(label10.Font, FontStyle.Bold);
         }
 
         private void inicializeComboBoxes()
         {
             string[] enumElements = Enum.GetNames(typeof(Rating));
-            foreach (ComboBox cb in this.Controls.OfType<ComboBox>())
+            foreach (ComboBox cb in groupBox1.Controls.OfType<ComboBox>())
             {
                 //cb.DataSource = Enum.GetNames(typeof(Rating));
                 foreach (var item in enumElements)
@@ -94,7 +98,7 @@ namespace LaptopvsPC
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            dtGrdVw.AutoResizeColumns();
+            //dtGrdVw.AutoResizeColumns();
         }
 
         private void bttnFinish_Click(object sender, EventArgs e)
@@ -130,17 +134,17 @@ namespace LaptopvsPC
            
             if (rdBttn != null)
             {
-                (dtGrdVw.DataSource as DataTable).DefaultView.RowFilter = string.Format("ID = '{0}'", rdBttn);
-                dtGrdVw.Visible = true;
-                dtGrdVw.AutoResizeColumns();
+                //(dtGrdVw.DataSource as DataTable).DefaultView.RowFilter = string.Format("ID = '{0}'", rdBttn);
+                //dtGrdVw.Visible = true;
+                //dtGrdVw.AutoResizeColumns();
             }
             
         }
 
         private void bttnReset_Click(object sender, EventArgs e)
         {
-            dtGrdVw.Visible=false;
-            rdBttn = null;
+            //dtGrdVw.Visible=false;
+            //rdBttn = null;
             var buttons = this.Controls.OfType<RadioButton>()
                            .FirstOrDefault(n => n.Checked);
             if (buttons != null)
@@ -152,6 +156,16 @@ namespace LaptopvsPC
             {
                 MessageBox.Show("Válassz ki valamit, mielőtt reset-elnél, ember...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void cmbBx4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
 
         }
     }
