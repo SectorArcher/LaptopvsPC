@@ -16,7 +16,7 @@ namespace LaptopvsPC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ResultFrm());
+            Application.Run(new MainFrm());
         }
     }
 }
