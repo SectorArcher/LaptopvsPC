@@ -787,16 +787,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 198</value>
+    <value>295, 198</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 34</value>
+    <value>99, 34</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>68</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Kész</value>
+    <value>Eredmény</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>

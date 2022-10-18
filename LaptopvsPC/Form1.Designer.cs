@@ -149,12 +149,14 @@
             this.cmbBx1.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx1, "cmbBx1");
             this.cmbBx1.Name = "cmbBx1";
+            this.cmbBx1.SelectedIndexChanged += new System.EventHandler(this.cmbBx1_SelectedIndexChanged);
             // 
             // cmbBx2
             // 
             this.cmbBx2.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx2, "cmbBx2");
             this.cmbBx2.Name = "cmbBx2";
+            this.cmbBx2.SelectedIndexChanged += new System.EventHandler(this.cmbBx2_SelectedIndexChanged);
             // 
             // cmbBx3
             // 
@@ -238,7 +240,7 @@
             resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label10
             // 

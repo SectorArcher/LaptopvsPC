@@ -32,6 +32,8 @@ namespace LaptopvsPC
             InitializeComponent();
         }
 
+       
+
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
@@ -169,9 +171,28 @@ namespace LaptopvsPC
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
 
+           
+            
+        }
+
+        private void cmbBx1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbBx1.Text.ToString()))
+            {
+                progressBar1.Value = progressBar1.Value + 20;
+            }
+        }
+
+        private void cmbBx2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbBx2.Text.ToString()))
+            {
+                progressBar1.Value = progressBar1.Value + 20;
+
+            }
         }
     }
 }
