@@ -14,15 +14,16 @@ namespace LaptopvsPC
     public partial class ResultFrm : Form
     {
         public int rdBttnState { get; set; }
+        Results results;
 
         static DataTable dt = new DataTable();
         static string filePath = @"..\..\RawData\Adatok.txt";
 
-        public ResultFrm(int rdBttn)
+        public ResultFrm(int rdBttn, Results results)
         {
             InitializeComponent();
-            this.rdBttnState = rdBttn;
-
+            rdBttnState = rdBttn;
+            this.results = results;
         }
 
         private void ResultFrm_Load(object sender, EventArgs e)
@@ -64,6 +65,8 @@ namespace LaptopvsPC
         }
         private void fillRchTxtBx()
         {
+            rchTxtBxResult.AppendText($"PC pontok: {results.PointsOfPC}\n");
+            rchTxtBxResult.AppendText($"Laptop pontok: {results.PointsOfLaptop}\n\n");
             for (int i = 1; i < dt.Columns.Count; ++i)
             {
                 rchTxtBxResult.SelectionFont = new Font(rchTxtBxResult.Font, FontStyle.Bold);

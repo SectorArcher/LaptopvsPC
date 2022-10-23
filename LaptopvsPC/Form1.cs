@@ -23,6 +23,8 @@ namespace LaptopvsPC
     public partial class MainFrm : Form
     {
         int rdBttn = -1;
+        int pointsOfPC = 0;
+        int pointsOfLaptop = 0;
 
         public MainFrm()
         {
@@ -78,14 +80,75 @@ namespace LaptopvsPC
 
             if (prgrssBr.Value == 100)
             {
-                ResultFrm resultFrm = new ResultFrm(rdBttn);
+                settingPoints();
+                ResultFrm resultFrm = new ResultFrm(rdBttn, new Results(pointsOfPC, pointsOfLaptop));
                 resultFrm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Kérlek minden szükséges adatot adj meg!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void settingPoints()
+        {
+            pointsFavL(cmbBx1 as ComboBox);
+            pointsFavL(cmbBx4 as ComboBox);
+            pointsFavL(cmbBx6 as ComboBox);
+            pointsFavPC(cmbBx2 as ComboBox);
+            pointsFavPC(cmbBx3 as ComboBox);
+            pointsFavPC(cmbBx5 as ComboBox);
+
+        }
+
+        private void pointsFavPC(ComboBox comboBox)
+        {
+            switch (comboBox.SelectedIndex)
+            {
+                case 0:
+                    pointsOfLaptop = pointsOfLaptop + 5;
+                    break;
+                case 1:
+                    pointsOfPC = pointsOfPC + 2;
+                    pointsOfLaptop = pointsOfLaptop + 4;
+                    break;
+                case 2:
+                    pointsOfPC = pointsOfPC + 3;
+                    pointsOfLaptop = pointsOfLaptop + 3;
+                    break;
+                case 3:
+                    pointsOfPC = pointsOfPC + 4;
+                    pointsOfLaptop = pointsOfLaptop + 2;
+                    break;
+                case 4:
+                    pointsOfPC = pointsOfPC + 5;
+
+                    break;
+            }
+        }
+        private void pointsFavL(ComboBox comboBox)
+        {
+            switch (comboBox.SelectedIndex)
+            {
+                case 0:
+                    pointsOfPC = pointsOfPC + 5;
+                    break;
+                case 1:
+                    pointsOfPC = pointsOfPC + 4;
+                    pointsOfLaptop = pointsOfLaptop + 2;
+                    break;
+                case 2:
+                    pointsOfPC = pointsOfPC + 3;
+                    pointsOfLaptop = pointsOfLaptop + 3;
+                    break;
+                case 3:
+                    pointsOfPC = pointsOfPC + 2;
+                    pointsOfLaptop = pointsOfLaptop + 4;
+                    break;
+                case 4:
+                    pointsOfLaptop = pointsOfLaptop + 5;
+                    break;
+            }
         }
 
         private void prgrssBrInitialization()
@@ -112,8 +175,6 @@ namespace LaptopvsPC
 
 
         }
-
-
 
         private void cmbBx4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -169,5 +230,6 @@ namespace LaptopvsPC
         {
             prgrssBrInitialization();
         }
+
     }
 }
