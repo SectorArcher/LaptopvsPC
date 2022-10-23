@@ -24,6 +24,9 @@ namespace LaptopvsPC
             InitializeComponent();
             rdBttnState = rdBttn;
             this.results = results;
+            chrt.Series["PC"].Points.AddXY("", results.getPCPercentage());
+            chrt.Series["Laptop"].Points.AddXY("", results.getLaptopPercentage());
+
         }
 
         private void ResultFrm_Load(object sender, EventArgs e)
@@ -75,5 +78,6 @@ namespace LaptopvsPC
                 rchTxtBxResult.AppendText(dt.Rows[rdBttnState][i].ToString() + "\n\n");                
             }
         }
+
     }
 }

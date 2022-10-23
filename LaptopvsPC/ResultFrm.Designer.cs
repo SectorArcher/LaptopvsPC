@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.rchTxtBxResult = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chrt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,30 +73,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Melyik eszköz?";
             // 
-            // chart1
-            // 
-            this.chart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chart1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(609, 174);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4);
-            this.chart1.Name = "chart1";
-            series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Laptop";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "PC";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(474, 236);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
-            // 
             // rchTxtBxResult
             // 
             this.rchTxtBxResult.Location = new System.Drawing.Point(12, 174);
@@ -105,13 +81,33 @@
             this.rchTxtBxResult.TabIndex = 5;
             this.rchTxtBxResult.Text = "";
             // 
+            // chrt
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chrt.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrt.Legends.Add(legend1);
+            this.chrt.Location = new System.Drawing.Point(609, 174);
+            this.chrt.Name = "chrt";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "PC";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Laptop";
+            this.chrt.Series.Add(series1);
+            this.chrt.Series.Add(series2);
+            this.chrt.Size = new System.Drawing.Size(475, 408);
+            this.chrt.TabIndex = 6;
+            this.chrt.Text = "chart1";
+            // 
             // ResultFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 594);
+            this.Controls.Add(this.chrt);
             this.Controls.Add(this.rchTxtBxResult);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -119,7 +115,7 @@
             this.Name = "ResultFrm";
             this.Text = "ResultFrm";
             this.Load += new System.EventHandler(this.ResultFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.RichTextBox rchTxtBxResult;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrt;
     }
 }
