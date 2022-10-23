@@ -48,18 +48,18 @@
             this.cmbBx3 = new System.Windows.Forms.ComboBox();
             this.cmbBx4 = new System.Windows.Forms.ComboBox();
             this.cmbBx5 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBx6 = new System.Windows.Forms.ComboBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.grpBx = new System.Windows.Forms.GroupBox();
+            this.grpBx2 = new System.Windows.Forms.GroupBox();
+            this.prgrssBr = new System.Windows.Forms.ProgressBar();
+            this.grpBx3 = new System.Windows.Forms.GroupBox();
+            this.bttnResults = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpBx.SuspendLayout();
+            this.grpBx2.SuspendLayout();
+            this.grpBx3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gomb1
@@ -74,6 +74,7 @@
             this.rdBttn1.Name = "rdBttn1";
             this.rdBttn1.TabStop = true;
             this.rdBttn1.UseVisualStyleBackColor = true;
+            this.rdBttn1.CheckedChanged += new System.EventHandler(this.rdBttn1_CheckedChanged);
             // 
             // rdBttn2
             // 
@@ -81,6 +82,7 @@
             this.rdBttn2.Name = "rdBttn2";
             this.rdBttn2.TabStop = true;
             this.rdBttn2.UseVisualStyleBackColor = true;
+            this.rdBttn2.CheckedChanged += new System.EventHandler(this.rdBttn2_CheckedChanged);
             // 
             // rdBttn4
             // 
@@ -88,6 +90,7 @@
             this.rdBttn4.Name = "rdBttn4";
             this.rdBttn4.TabStop = true;
             this.rdBttn4.UseVisualStyleBackColor = true;
+            this.rdBttn4.CheckedChanged += new System.EventHandler(this.rdBttn4_CheckedChanged);
             // 
             // rdBttn5
             // 
@@ -95,6 +98,7 @@
             this.rdBttn5.Name = "rdBttn5";
             this.rdBttn5.TabStop = true;
             this.rdBttn5.UseVisualStyleBackColor = true;
+            this.rdBttn5.CheckedChanged += new System.EventHandler(this.rdBttn5_CheckedChanged);
             // 
             // rdBttn3
             // 
@@ -102,6 +106,7 @@
             this.rdBttn3.Name = "rdBttn3";
             this.rdBttn3.TabStop = true;
             this.rdBttn3.UseVisualStyleBackColor = true;
+            this.rdBttn3.CheckedChanged += new System.EventHandler(this.rdBttn3_CheckedChanged);
             // 
             // label1
             // 
@@ -163,6 +168,7 @@
             this.cmbBx3.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx3, "cmbBx3");
             this.cmbBx3.Name = "cmbBx3";
+            this.cmbBx3.SelectedIndexChanged += new System.EventHandler(this.cmbBx3_SelectedIndexChanged);
             // 
             // cmbBx4
             // 
@@ -176,12 +182,14 @@
             this.cmbBx5.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx5, "cmbBx5");
             this.cmbBx5.Name = "cmbBx5";
+            this.cmbBx5.SelectedIndexChanged += new System.EventHandler(this.cmbBx5_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cmbBx6
             // 
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
+            this.cmbBx6.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbBx6, "cmbBx6");
+            this.cmbBx6.Name = "cmbBx6";
+            this.cmbBx6.SelectedIndexChanged += new System.EventHandler(this.cmbBx6_SelectedIndexChanged);
             // 
             // splitter1
             // 
@@ -189,58 +197,57 @@
             this.splitter1.Name = "splitter1";
             this.splitter1.TabStop = false;
             // 
-            // groupBox1
+            // grpBx
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbBx5);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbBx4);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.cmbBx3);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.cmbBx2);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.cmbBx1);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.grpBx.Controls.Add(this.label6);
+            this.grpBx.Controls.Add(this.label1);
+            this.grpBx.Controls.Add(this.cmbBx6);
+            this.grpBx.Controls.Add(this.label4);
+            this.grpBx.Controls.Add(this.cmbBx5);
+            this.grpBx.Controls.Add(this.label5);
+            this.grpBx.Controls.Add(this.cmbBx4);
+            this.grpBx.Controls.Add(this.label7);
+            this.grpBx.Controls.Add(this.cmbBx3);
+            this.grpBx.Controls.Add(this.label8);
+            this.grpBx.Controls.Add(this.cmbBx2);
+            this.grpBx.Controls.Add(this.label9);
+            this.grpBx.Controls.Add(this.cmbBx1);
+            resources.ApplyResources(this.grpBx, "grpBx");
+            this.grpBx.Name = "grpBx";
+            this.grpBx.TabStop = false;
             // 
-            // groupBox2
+            // grpBx2
             // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.rdBttn1);
-            this.groupBox2.Controls.Add(this.rdBttn2);
-            this.groupBox2.Controls.Add(this.rdBttn4);
-            this.groupBox2.Controls.Add(this.rdBttn3);
-            this.groupBox2.Controls.Add(this.rdBttn5);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            this.grpBx2.Controls.Add(this.label3);
+            this.grpBx2.Controls.Add(this.rdBttn1);
+            this.grpBx2.Controls.Add(this.rdBttn2);
+            this.grpBx2.Controls.Add(this.rdBttn4);
+            this.grpBx2.Controls.Add(this.rdBttn3);
+            this.grpBx2.Controls.Add(this.rdBttn5);
+            resources.ApplyResources(this.grpBx2, "grpBx2");
+            this.grpBx2.Name = "grpBx2";
+            this.grpBx2.TabStop = false;
             // 
-            // progressBar1
+            // prgrssBr
             // 
-            resources.ApplyResources(this.progressBar1, "progressBar1");
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            resources.ApplyResources(this.prgrssBr, "prgrssBr");
+            this.prgrssBr.Name = "prgrssBr";
             // 
-            // groupBox3
+            // grpBx3
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label2);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
+            this.grpBx3.Controls.Add(this.bttnResults);
+            this.grpBx3.Controls.Add(this.label10);
+            this.grpBx3.Controls.Add(this.label2);
+            resources.ApplyResources(this.grpBx3, "grpBx3");
+            this.grpBx3.Name = "grpBx3";
+            this.grpBx3.TabStop = false;
             // 
-            // button1
+            // bttnResults
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            resources.ApplyResources(this.bttnResults, "bttnResults");
+            this.bttnResults.Name = "bttnResults";
+            this.bttnResults.UseVisualStyleBackColor = true;
+            this.bttnResults.Click += new System.EventHandler(this.bttnResults_Click);
             // 
             // label10
             // 
@@ -257,10 +264,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpBx3);
+            this.Controls.Add(this.prgrssBr);
+            this.Controls.Add(this.grpBx2);
+            this.Controls.Add(this.grpBx);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.gomb1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -268,12 +275,12 @@
             this.Name = "MainFrm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.MainFrm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grpBx.ResumeLayout(false);
+            this.grpBx.PerformLayout();
+            this.grpBx2.ResumeLayout(false);
+            this.grpBx2.PerformLayout();
+            this.grpBx3.ResumeLayout(false);
+            this.grpBx3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,14 +306,14 @@
         private System.Windows.Forms.ComboBox cmbBx3;
         private System.Windows.Forms.ComboBox cmbBx4;
         private System.Windows.Forms.ComboBox cmbBx5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBx6;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grpBx;
+        private System.Windows.Forms.GroupBox grpBx2;
+        private System.Windows.Forms.ProgressBar prgrssBr;
+        private System.Windows.Forms.GroupBox grpBx3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bttnResults;
         private System.Windows.Forms.Label label10;
     }
 }

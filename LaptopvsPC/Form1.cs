@@ -11,37 +11,27 @@ using System.Windows.Forms;
 
 namespace LaptopvsPC
 {
+    public enum Rating
+    {
+        Egyátalán_nem_fontos,
+        Nem_fontos,
+        Közepesen_fontos,
+        Eléggé_fontos,
+        Nagyon_fontos
+    }
 
     public partial class MainFrm : Form
     {
-        DataTable dt = new DataTable();
-        string filePath = @"..\..\RawData\Adatok.txt";
-        int? rdBttn = null;
-
-        public enum Rating
-        {
-            Egyátalán_nem_fontos,
-            Nem_fontos,
-            Közepesen_fontos,
-            Eléggé_fontos,
-            Nagyon_fontos
-        }
+        int rdBttn = -1;
 
         public MainFrm()
         {
             InitializeComponent();
         }
 
-       
-
-
         private void MainFrm_Load(object sender, EventArgs e)
         {
-            inicializeDataTable();
-            //dtGrdVw.DataSource = dt;
-            dataProcessing();
-            //dtGrdVw.Columns[0].Visible = false;
-            //dtGrdVw.Visible = false;
+
             inicializeComboBoxes();
             label2.Font = new Font(label2.Font, FontStyle.Bold);
             label10.Font = new Font(label10.Font, FontStyle.Bold);
@@ -50,9 +40,8 @@ namespace LaptopvsPC
         private void inicializeComboBoxes()
         {
             string[] enumElements = Enum.GetNames(typeof(Rating));
-            foreach (ComboBox cb in groupBox1.Controls.OfType<ComboBox>())
+            foreach (ComboBox cb in grpBx.Controls.OfType<ComboBox>())
             {
-                //cb.DataSource = Enum.GetNames(typeof(Rating));
                 foreach (var item in enumElements)
                 {
                     cb.Items.Add(item.Replace("_", " "));
@@ -61,52 +50,9 @@ namespace LaptopvsPC
             }
 
         }
-
-        private void inicializeDataTable()
+        private void bttnResults_Click(object sender, EventArgs e)
         {
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Processzor");
-            dt.Columns.Add("Memória");
-            dt.Columns.Add("Videókártya");
-            dt.Columns.Add("Kivitel");
-            dt.Columns.Add("Javaslatok");
-        }
-
-        private void dataProcessing()
-        {
-            string text;
-            try
-            {
-                using (StreamReader sr = new StreamReader(filePath))
-                {
-                    text = sr.ReadToEnd();
-                    string[] lines = text.Split(new char[] { '*' });
-                    for (int i = 0; i < lines.Length; ++i)
-                    {
-                        string[] splices = lines[i].Split(new char[] { ',' });
-                        string[] row = new string[splices.Length];
-                        for (int x = 0; x < splices.Length; ++x)
-                        {
-                            row[x] = splices[x].Trim();
-                        }
-
-                        dt.Rows.Add(row);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //dtGrdVw.AutoResizeColumns();
-        }
-
-        private void bttnFinish_Click(object sender, EventArgs e)
-        {
-
-            var buttons = this.Controls.OfType<RadioButton>()
+            var buttons = grpBx2.Controls.OfType<RadioButton>()
                            .FirstOrDefault(n => n.Checked);
             if (buttons != null)
             {
@@ -129,70 +75,99 @@ namespace LaptopvsPC
                         break;
                 }
             }
+
+            if (prgrssBr.Value == 100)
+            {
+                ResultFrm resultFrm = new ResultFrm(rdBttn);
+                resultFrm.ShowDialog();
+            }
             else
             {
-                MessageBox.Show("Kérlek válassz ki egy radiobutton-t, ne legyél buta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kérlek minden szükséges adatot adj meg!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
-            if (rdBttn != null)
-            {
-                //(dtGrdVw.DataSource as DataTable).DefaultView.RowFilter = string.Format("ID = '{0}'", rdBttn);
-                //dtGrdVw.Visible = true;
-                //dtGrdVw.AutoResizeColumns();
-            }
-            
+
         }
 
-        private void bttnReset_Click(object sender, EventArgs e)
+        private void prgrssBrInitialization()
         {
-            //dtGrdVw.Visible=false;
-            //rdBttn = null;
-            var buttons = this.Controls.OfType<RadioButton>()
-                           .FirstOrDefault(n => n.Checked);
+            int numberOfCheckedComponents = 0;
+
+            var buttons = grpBx2.Controls.OfType<RadioButton>()
+                          .FirstOrDefault(n => n.Checked);
             if (buttons != null)
             {
-                buttons.Checked = false;
+                numberOfCheckedComponents = numberOfCheckedComponents + 1;
+            }
 
-            }
-            else
+
+            foreach (Control cmbBx in grpBx.Controls)
             {
-                MessageBox.Show("Válassz ki valamit, mielőtt reset-elnél, ember...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cmbBx.Text != "")                
+                {
+                    ++numberOfCheckedComponents;
+                }
             }
+
+            prgrssBr.Value = (int)Math.Round((double)(numberOfCheckedComponents -7)/ 7 * 100, 0);
+
 
         }
+
+
 
         private void cmbBx4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-           
-            
+            prgrssBrInitialization();
         }
 
         private void cmbBx1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbBx1.Text.ToString()))
-            {
-                progressBar1.Value = progressBar1.Value + 20;
-            }
+            prgrssBrInitialization();
         }
 
         private void cmbBx2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbBx2.Text.ToString()))
-            {
-                progressBar1.Value = progressBar1.Value + 20;
+            prgrssBrInitialization();
+        }
 
-            }
+        private void cmbBx3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void cmbBx5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void cmbBx6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        } 
+
+        private void rdBttn1_CheckedChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void rdBttn2_CheckedChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void rdBttn3_CheckedChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void rdBttn4_CheckedChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
+        }
+
+        private void rdBttn5_CheckedChanged(object sender, EventArgs e)
+        {
+            prgrssBrInitialization();
         }
     }
 }
