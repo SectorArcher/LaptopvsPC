@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rchTxtBxResult = new System.Windows.Forms.RichTextBox();
             this.chrt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bttnSave = new System.Windows.Forms.Button();
+            this.bttnRestart = new System.Windows.Forms.Button();
+            this.bttnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chrt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,29 +86,62 @@
             // 
             // chrt
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chrt.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrt.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chrt.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrt.Legends.Add(legend2);
             this.chrt.Location = new System.Drawing.Point(609, 174);
             this.chrt.Name = "chrt";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "PC";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Laptop";
-            this.chrt.Series.Add(series1);
-            this.chrt.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "PC";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Laptop";
+            this.chrt.Series.Add(series3);
+            this.chrt.Series.Add(series4);
             this.chrt.Size = new System.Drawing.Size(475, 408);
             this.chrt.TabIndex = 6;
             this.chrt.Text = "chart1";
+            // 
+            // bttnSave
+            // 
+            this.bttnSave.Location = new System.Drawing.Point(403, 136);
+            this.bttnSave.Name = "bttnSave";
+            this.bttnSave.Size = new System.Drawing.Size(84, 32);
+            this.bttnSave.TabIndex = 7;
+            this.bttnSave.Text = "Mentés";
+            this.bttnSave.UseVisualStyleBackColor = true;
+            this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
+            // 
+            // bttnRestart
+            // 
+            this.bttnRestart.Location = new System.Drawing.Point(882, 12);
+            this.bttnRestart.Name = "bttnRestart";
+            this.bttnRestart.Size = new System.Drawing.Size(98, 32);
+            this.bttnRestart.TabIndex = 7;
+            this.bttnRestart.Text = "Újraindítás";
+            this.bttnRestart.UseVisualStyleBackColor = true;
+            this.bttnRestart.Click += new System.EventHandler(this.bttnRestart_Click);
+            // 
+            // bttnExit
+            // 
+            this.bttnExit.Location = new System.Drawing.Point(986, 12);
+            this.bttnExit.Name = "bttnExit";
+            this.bttnExit.Size = new System.Drawing.Size(98, 32);
+            this.bttnExit.TabIndex = 7;
+            this.bttnExit.Text = "Kilépés";
+            this.bttnExit.UseVisualStyleBackColor = true;
+            this.bttnExit.Click += new System.EventHandler(this.bttnExit_Click);
             // 
             // ResultFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 594);
+            this.Controls.Add(this.bttnExit);
+            this.Controls.Add(this.bttnRestart);
+            this.Controls.Add(this.bttnSave);
             this.Controls.Add(this.chrt);
             this.Controls.Add(this.rchTxtBxResult);
             this.Controls.Add(this.label3);
@@ -127,5 +163,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rchTxtBxResult;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrt;
+        private System.Windows.Forms.Button bttnSave;
+        private System.Windows.Forms.Button bttnRestart;
+        private System.Windows.Forms.Button bttnExit;
     }
 }

@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Windows.Forms;
-
-
 
 
 namespace LaptopvsPC
 {
-    public enum Rating
+    enum Rating
     {
         Egyátalán_nem_fontos,
         Nem_fontos,
@@ -22,9 +17,9 @@ namespace LaptopvsPC
 
     public partial class MainFrm : Form
     {
-        int rdBttn = -1;
-        int pointsOfPC = 0;
-        int pointsOfLaptop = 0;
+        private int rdBttn = -1;
+        private int pointsOfPC = 0;
+        private int pointsOfLaptop = 0;
 
         public MainFrm()
         {
@@ -52,6 +47,7 @@ namespace LaptopvsPC
             }
 
         }
+
         private void bttnResults_Click(object sender, EventArgs e)
         {
             var buttons = grpBx2.Controls.OfType<RadioButton>()
@@ -122,10 +118,10 @@ namespace LaptopvsPC
                     break;
                 case 4:
                     pointsOfPC = pointsOfPC + 5;
-
                     break;
             }
         }
+
         private void pointsFavL(ComboBox comboBox)
         {
             switch (comboBox.SelectedIndex)
@@ -176,60 +172,17 @@ namespace LaptopvsPC
 
         }
 
-        private void cmbBx4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void cmbBx1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void cmbBx2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void cmbBx3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void cmbBx5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void cmbBx6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        } 
-
-        private void rdBttn1_CheckedChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void rdBttn2_CheckedChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void rdBttn3_CheckedChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void rdBttn4_CheckedChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
-
-        private void rdBttn5_CheckedChanged(object sender, EventArgs e)
-        {
-            prgrssBrInitialization();
-        }
+        private void cmbBx4_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void cmbBx1_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void cmbBx2_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void cmbBx3_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void cmbBx5_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void cmbBx6_SelectedIndexChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void rdBttn1_CheckedChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void rdBttn2_CheckedChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void rdBttn3_CheckedChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void rdBttn4_CheckedChanged(object sender, EventArgs e) => prgrssBrInitialization();
+        private void rdBttn5_CheckedChanged(object sender, EventArgs e) => prgrssBrInitialization();
 
     }
 }

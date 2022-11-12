@@ -1,41 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaptopvsPC
 {
     public partial class ResultFrm : Form
     {
-        public int rdBttnState { get; set; }
-        Results results;
+        private int rdBttnState { get; set; }
 
-        static DataTable dt = new DataTable();
-        static string filePath = @"..\..\RawData\Adatok.txt";
+        Results results;
+        DataTable dt = new DataTable();
+        string filePath = @"..\..\RawData\Adatok.txt";
 
         public ResultFrm(int rdBttn, Results results)
         {
             InitializeComponent();
             rdBttnState = rdBttn;
             this.results = results;
-            chrt.Series["PC"].Points.AddXY("", results.getPCPercentage());
-            chrt.Series["Laptop"].Points.AddXY("", results.getLaptopPercentage());
-
         }
 
         private void ResultFrm_Load(object sender, EventArgs e)
         {
-
             inicializeDataTable();
             dataProcessing();
             fillRchTxtBx();
+            chrt.Series["PC"].Points.AddXY("", results.getPCPercentage());
+            chrt.Series["Laptop"].Points.AddXY("", results.getLaptopPercentage());
         }
+
         private void inicializeDataTable()
         {
             dt.Columns.Add("ID");
@@ -48,24 +42,32 @@ namespace LaptopvsPC
         private void dataProcessing()
         {
             string text;
-
-            using (StreamReader sr = new StreamReader(filePath))
+            try
             {
-                text = sr.ReadToEnd();
-                string[] lines = text.Split(new char[] { '*' });
-                for (int i = 0; i < lines.Length; ++i)
+                using (StreamReader sr = new StreamReader(filePath))
                 {
-                    string[] splices = lines[i].Split(new char[] { ',' });
-                    string[] row = new string[splices.Length];
-                    for (int x = 0; x < splices.Length; ++x)
+                    text = sr.ReadToEnd();
+                    string[] lines = text.Split(new char[] { '*' });
+                    for (int i = 0; i < lines.Length; ++i)
                     {
-                        row[x] = splices[x].Trim();
-                    }
+                        string[] splices = lines[i].Split(new char[] { ',' });
+                        string[] row = new string[splices.Length];
+                        for (int x = 0; x < splices.Length; ++x)
+                        {
+                            row[x] = splices[x].Trim();
+                        }
 
-                    dt.Rows.Add(row);
+                        dt.Rows.Add(row);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
+
         private void fillRchTxtBx()
         {
             rchTxtBxResult.AppendText($"PC pontok: {results.PointsOfPC}\n");
@@ -79,5 +81,49 @@ namespace LaptopvsPC
             }
         }
 
+        private void bttnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text File | *.txt";
+            dialog.FileName = "results.txt";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(dialog.OpenFile()))
+                    {
+                        streamWriter.WriteLine(rchTxtBxResult.Text);
+                        streamWriter.Dispose();
+                        streamWriter.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void bttnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
+
+        private void bttnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Biztosan ki szeretne lépni?", "Kilépés", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            try
+            {
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
