@@ -151,6 +151,7 @@
             // 
             // cmbBx1
             // 
+            this.cmbBx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx1.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx1, "cmbBx1");
             this.cmbBx1.Name = "cmbBx1";
@@ -158,6 +159,7 @@
             // 
             // cmbBx2
             // 
+            this.cmbBx2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx2.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx2, "cmbBx2");
             this.cmbBx2.Name = "cmbBx2";
@@ -165,6 +167,7 @@
             // 
             // cmbBx3
             // 
+            this.cmbBx3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx3.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx3, "cmbBx3");
             this.cmbBx3.Name = "cmbBx3";
@@ -172,6 +175,7 @@
             // 
             // cmbBx4
             // 
+            this.cmbBx4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx4.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx4, "cmbBx4");
             this.cmbBx4.Name = "cmbBx4";
@@ -179,6 +183,7 @@
             // 
             // cmbBx5
             // 
+            this.cmbBx5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx5.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx5, "cmbBx5");
             this.cmbBx5.Name = "cmbBx5";
@@ -186,6 +191,7 @@
             // 
             // cmbBx6
             // 
+            this.cmbBx6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBx6.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBx6, "cmbBx6");
             this.cmbBx6.Name = "cmbBx6";
