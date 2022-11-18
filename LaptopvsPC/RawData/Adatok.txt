@@ -1,5 +1,5 @@
-0,2-3 magos processzor 2-3 GHz közötti órajellel, 8GB Ram, Integrált videóvezérlő, Ha a horedozhatóság fontos akkor laptop egyébként asztali pc.*
-1, 4-8 magos processzor 4+ GHz órajellel, minimun 16 GB Ram de inkább 32 GB magas memória órajellel, dedikált videókártya legalább 4 GB memóriával, fix asztali számítógép*
-2, 4 mag 3 GHz körüli órajellel, 8 GB Ram, Dedikált videókártya 1-2 GB memóriával, ajánlott az asztali számítógép*
-3, 4 magos processzor 3 GHz körüli órajellel, 8 GB Ram, integrált videókártya de javasolt a dedikált videókártya, Ha a horedozhatóság fontos akkor laptop egyébként asztali pc.*
-4, 4-8 magos processzor, 16 GB Ram , Dedikált videókártya 4 GB memóriával, Asztali számítógép javasolt a nagyobb teljesítmény érdekében.
+0,Bármilyen 2 magos processzor, 8GB memória a gyors mükődés miatt, Integrált videokártya, Ha a hordozhatóság fontos akkor laptop de erősebb asztali pc-t lehet vásárolni ugyanabból az összegből gazdálkodunk.*
+1, 4-8 magos processzor 4+ GHz órajellel, minimun 16 GB Ram de inkább 32 GB magas memória órajellel, dedikált videokártya legalább 4 GB memóriával, Az ilyen munkák elvégzéséhez ajánlott az asztali számítógép.*
+2, Bármilyen 2 magos processzor , 4GB de ha belefér a büdzsébe akkor 8 GB memória, Ajánlott a dedikált videókártya, Laptopot érdemes helytakarékosságból de az asztali számítógép ajánlott*
+3, Magas órajelü 2 magos de inkább 4 magos processzor , 8 GB Ram, integrált videókártya de javasolt a dedikált videókártya, Ha a hordozhatóság fontos akkor laptop egyébként asztali pc.*
+4, Legalább 4 magos processzor, 16 GB memória , Dedikált videókártya legalább 2 GB memóriával, Asztali számítógép javasolt a nagyobb teljesítmény érdekében.
